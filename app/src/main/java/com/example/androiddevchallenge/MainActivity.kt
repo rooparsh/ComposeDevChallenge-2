@@ -90,7 +90,7 @@ class MainActivity : AppCompatActivity() {
 
                             CountDownIndicator(
                                 progress = viewModel.progress.observeAsState(1f).value.toFloat() /
-                                        viewModel.timer,
+                                    viewModel.timer,
                                 playingState = playingState ?: PlayingState.Reset,
                                 size = 400,
                                 stroke = 12

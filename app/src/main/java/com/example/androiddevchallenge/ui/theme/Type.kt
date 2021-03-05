@@ -24,7 +24,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.example.androiddevchallenge.R
 
-
 private val appFontFamily = FontFamily(
     listOf(
         Font(
@@ -56,4 +55,3 @@ caption = TextStyle(
 )
 */
 )
-
