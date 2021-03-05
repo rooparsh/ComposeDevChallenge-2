@@ -76,6 +76,13 @@ dependencies {
 
     testImplementation 'junit:junit:4.13.2'
 
+    implementation "com.airbnb.android:lottie-compose:1.0.0-alpha07-SNAPSHOT"
+
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
+
+    // Lifecycle (ViewModel + LiveData)
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha02'
+    implementation "androidx.compose.runtime:runtime-livedata:$compose_version"
+
 }
