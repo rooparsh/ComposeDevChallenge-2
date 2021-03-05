@@ -20,7 +20,12 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.animation.ExperimentalAnimationApi
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -33,7 +38,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.data.PlayingState
 import com.example.androiddevchallenge.data.Time
-import com.example.androiddevchallenge.ui.component.*
+import com.example.androiddevchallenge.ui.component.Clock
+import com.example.androiddevchallenge.ui.component.ClockPreview
+import com.example.androiddevchallenge.ui.component.Controller
+import com.example.androiddevchallenge.ui.component.CountDownIndicator
+import com.example.androiddevchallenge.ui.component.NumberPicker
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
@@ -59,7 +68,8 @@ class MainActivity : AppCompatActivity() {
                         val playingState = viewModel.playingState.observeAsState().value
 
                         Text(
-                            text = "Relax Down"
+                            text = "Relax Down",
+                            style = MaterialTheme.typography.h1
                         )
                         Spacer(modifier = Modifier.height(30.dp))
 
@@ -79,10 +89,10 @@ class MainActivity : AppCompatActivity() {
                             Spacer(modifier = Modifier.height(30.dp))
 
                             CountDownIndicator(
-                                progress = viewModel.progress.observeAsState(1f).value.toFloat()
-                                        / viewModel.timer,
+                                progress = viewModel.progress.observeAsState(1f).value.toFloat() /
+                                        viewModel.timer,
                                 playingState = playingState ?: PlayingState.Reset,
-                                size = 500,
+                                size = 400,
                                 stroke = 12
                             )
                         }
@@ -132,7 +142,7 @@ fun LightPreview() {
             CountDownIndicator(
                 progress = 50f,
                 playingState = PlayingState.Playing,
-                size = 300,
+                size = 250,
                 stroke = 12
             )
         }
